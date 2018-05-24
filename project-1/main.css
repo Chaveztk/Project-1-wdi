@@ -1,0 +1,42 @@
+ * {
+  box-sizing: border-box;
+}
+#map {
+width: 600px;
+height: 300px;
+
+}
+#map div{
+  border: 1px solid white;
+  width: 30px;
+  height: 30px;
+  float: left;
+}
+
+.blank {background-color: white;}
+.path {background-color: white;}
+
+
+.snake{
+  background-color: black
+}
+
+.head{
+  background-color: blue
+}
+
+.food{
+  background-color: red;
+}
+
+body{
+  background: linear-gradient(black, green);
+  height: 1000px;
+  background-repeat: no-repeat;
+}
+
+h1, .score {
+  font-family: 'Press Start 2P', cursive;
+  color: grey;
+  text-align: center;
+}
