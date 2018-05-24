@@ -1,10 +1,15 @@
  * {
   box-sizing: border-box;
 }
+img{
+  max-width: 100%;
+  max-height: 100%;
+}
+
+
 #map {
 width: 600px;
 height: 300px;
-
 }
 #map div{
   border: 1px solid white;
