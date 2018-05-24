@@ -2,11 +2,6 @@
   box-sizing: border-box;
 } */
 
-img{
-  max-width: 100%;
-  max-height: 100%;
-}
-
 
 #map {
 width: 600px;
@@ -51,6 +46,11 @@ height: 600px;
   background-color: red;
 }
 
+.score{
+  text-align: center;
+  color: white;
+}
+
 body{
   background: linear-gradient(black, green);
   height: 1000px;
@@ -63,7 +63,11 @@ body{
 
 h1, .score {
   font-family: 'Press Start 2P', cursive;
-  color: grey;
+  /* color: grey; */
+}
+
+h1{
+  color: white;
 }
 
 footer{
@@ -71,6 +75,32 @@ footer{
   width: 200px;
 }
 
-#gameOver{
+/* #gameOver {
   background-image: url(./images/snake.gif);
+} */
+
+img{
+  background-size: cover;
+}
+
+#flash {
+  animation: blinker 1s linear infinite;
+}
+
+#gameOver {
+  text-align: center;
+}
+#try-button{
+  height: 60px;
+  width:  150px;
+  color: green;
+  background-color: black;
+  outline: none;
+  font-size: 25px;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
 }

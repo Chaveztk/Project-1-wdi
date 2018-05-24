@@ -33,15 +33,16 @@ $(()=>{
   let snakeIsGrowing = false;
   let gameIsRunning = false;
   let intervalId = -1;
-  const initialSpeed = 200;
+  const initialSpeed = 500;
   let currentSpeed = initialSpeed;
   const maxSpeed = 50;
   const width = grid[0].length;
   const height = grid.length;
+  const $map = $('.gameScreen');
   const $gameEndScreen = $('#gameOver');
-  const $map = $('#map');
 
-  $gameEndScreen.hide();
+
+
 
 
   function clearFood() {
@@ -258,6 +259,7 @@ $(()=>{
     clearFood();
     placeRandomFood();
     runLoopAtSpeed(currentSpeed);
+    $gameEndScreen.hide();
   }
 
   function runLoopAtSpeed(speed) {
@@ -272,6 +274,7 @@ $(()=>{
       shiftSnake();
       if(snakeHasCrashed()) {
         $map.hide();
+        $gameEndScreen.show();
         endGame();
 
       }
@@ -279,6 +282,8 @@ $(()=>{
       if(gameIsRunning) {
         clearSnake();
         drawSnake();
+        $gameEndScreen.hide();
+        $map.show();
       }
     }, speed);
   }
@@ -304,11 +309,11 @@ $(()=>{
     }
   });
 
-  $('#start-button').on('click', function() {
-    startGame();
-    clearSnake();
-    $map.show();
-  });
+  // $('#start-button').on('click', function() {
+  //   startGame();
+  //   clearSnake();
+  //   $map.show();
+  // });
 
   drawGrid();
   startGame();

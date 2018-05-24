@@ -9,17 +9,25 @@
    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
   </head>
   <body>
-
-    <div id="gameOver">
-      <button type="button" name="tryAgain?">Try Again</button>
+    <head>
+      <h1>Snake</h1>
+    </head>
+    <div class="gameScreen">
+      <div id="map"></div>
+      <!-- <button type="button" name="start" id="start-button">Start</button> -->
     </div>
-    <div id="map">
-        <button type="button" name="start" id="start-button">Start</button>
+
+    <div class="gameOverScreen">
+      <div id="gameOver">
+          <img src="./images/snake.gif">
+        <h1 id= "flash">GAME OVER</h1>
+        <button type="button" name="tryAgain?" id="try-button">Restart</button>
       </div>
-    <h1>Snake</h1>
-    <div class='score'></div>
-
-
+    </div>
+    <footer>
+            <h1>Score</h1>
+            <div class='score'></div>
+    </footer>
   </body>
 </html>
 <!-- <div id="food"></div> -->
