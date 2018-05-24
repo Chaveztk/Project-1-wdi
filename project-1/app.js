@@ -39,6 +39,7 @@ $(()=>{
   const width = grid[0].length;
   const height = grid.length;
 
+
   function clearFood() {
     for (var i = 0; i < height; i++) {
       for (var j = 0; j < width; j++) {
@@ -304,4 +305,7 @@ $(()=>{
   drawGrid();
   startGame();
 
+  $('#gameOver').on('click', function() {
+
+  });
 });
