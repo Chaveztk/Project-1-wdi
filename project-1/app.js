@@ -160,7 +160,7 @@ $(()=>{
     placeRandomFood();
     // Speed up the game
     if(currentSpeed > maxSpeed) {
-      currentSpeed -= 20;
+      currentSpeed -= 10;
     }
     runLoopAtSpeed(currentSpeed);
   }

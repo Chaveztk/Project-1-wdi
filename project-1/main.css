@@ -13,6 +13,22 @@ height: 300px;
   float: left;
 }
 
+#start-button{
+  height: 60px;
+  width: 20%;
+  color: green;
+  background-color: black;
+  outline: none;
+  font-size: 25px
+}
+
+#start-button .score{
+    text-align: center;
+    font-family: 'Press Start 2P', cursive;
+    text-align: center;
+}
+
+
 .blank {background-color: white;}
 .path {background-color: white;}
 
@@ -38,5 +54,5 @@ body{
 h1, .score {
   font-family: 'Press Start 2P', cursive;
   color: grey;
-  text-align: center;
+
 }
