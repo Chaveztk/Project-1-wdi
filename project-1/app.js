@@ -33,7 +33,7 @@ $(()=>{
   let snakeIsGrowing = false;
   let gameIsRunning = false;
   let intervalId = -1;
-  const initialSpeed = 200;
+  const initialSpeed = 300;
   let currentSpeed = initialSpeed;
   const maxSpeed = 10;
   const width = grid[0].length;
@@ -275,6 +275,8 @@ $(()=>{
       if(snakeHasCrashed()) {
         $map.hide();
         $gameEndScreen.show();
+        $('body').css('backgroud-color', 'black');
+
         endGame();
 
       }
