@@ -2,24 +2,24 @@
 
 
 const grid = [
-  [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-  [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-  [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-  [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-  [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-  [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-  [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-  [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-  [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-  [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-  [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-  [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-  [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-  [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-  [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-  [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-  [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
-  [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
+  [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+  [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+  [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+  [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+  [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+  [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+  [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+  [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+  [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+  [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+  [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+  [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+  [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+  [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+  [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+  [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+  [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],
+  [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]
 ];
 
 console.log(`grid is ${grid.length}x${grid[0].length}`);
@@ -33,11 +33,17 @@ $(()=>{
   let snakeIsGrowing = false;
   let gameIsRunning = false;
   let intervalId = -1;
-  const initialSpeed = 200;
+  const initialSpeed = 300;
   let currentSpeed = initialSpeed;
-  const maxSpeed = 50;
+  const maxSpeed = 10;
   const width = grid[0].length;
   const height = grid.length;
+  const $map = $('.gameScreen');
+  const $gameEndScreen = $('#gameOver');
+
+
+
+
 
   function clearFood() {
     for (var i = 0; i < height; i++) {
@@ -62,13 +68,6 @@ $(()=>{
     return Math.floor(Math.random() * n);
   }
 
-  // 1. work out new head position (depends what direction you're going in)
-  // 2. push new position onto snake array
-  // 3. shift snake with snake.shift()
-  // 4. set class of EVERY snake div to 'blank' (completely clear the grid)
-  // 5. loop through snake array, for(....) {}
-  //    - find the div which corresponds to the position $(`div[x=${2}][y=${3}]`)
-  //    - set the class of the div to 'snake' (addClass)
   function getNewHeadPosition() {
     const currentHeadPosition = getSnakeHead();
     const newHeadPosition = [];
@@ -233,26 +232,16 @@ $(()=>{
     snake = [
       [2, 4],
       [3, 4],
-      [4, 4], // head
-      [5, 4],
-      [6, 4],
-      [7, 4],
-      [8, 4],
-      [9, 4],
-      [10, 4],
-      [11, 4],
-      [12, 4],
-      [13, 4],
-      [13, 5],
-      [13, 6],
-      [13, 7],
-      [13, 8]
+      [4, 4],
+      [5, 4] // head
+
     ];
     gameIsRunning = true;
     drawGame();
     clearFood();
     placeRandomFood();
     runLoopAtSpeed(currentSpeed);
+    $gameEndScreen.hide();
   }
 
   function runLoopAtSpeed(speed) {
@@ -266,12 +255,19 @@ $(()=>{
       }
       shiftSnake();
       if(snakeHasCrashed()) {
+        $map.hide();
+        $gameEndScreen.show();
+        $('body').css('backgroud-color', 'black');
+
         endGame();
+
       }
       // Draw the new snake, (clear it first)
       if(gameIsRunning) {
         clearSnake();
         drawSnake();
+        $gameEndScreen.hide();
+        $map.show();
       }
     }, speed);
   }
@@ -280,7 +276,7 @@ $(()=>{
     switch(e.which){
       case 38: // up
         e.preventDefault(); // stop up and down moving screen around!
-        direction = 'up'; // what to do here?
+        direction = 'up';
         break;
       case 39:
         e.preventDefault(); // stop up and down moving screen around!
@@ -297,11 +293,12 @@ $(()=>{
     }
   });
 
-  $('#start-button').on('click', function() {
-    startGame();
-  });
-
   drawGrid();
   startGame();
 
+  $('#gameOver').on('click', function() {
+    startGame();
+    clearSnake();
+
+  });
 });

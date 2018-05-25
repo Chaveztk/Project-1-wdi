@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+ <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
@@ -9,12 +9,23 @@
    <link href="https://fonts.googleapis.com/css?family=Press+Start+2P" rel="stylesheet">
   </head>
   <body>
-  <div id="map"></div>
-  <h1>Snake</h1>
-  <div class='score'></div>
-  <!-- <div id="food"></div> -->
-  <!-- <input type="text" id="cell-address"> -->
-  <button type="button" name="start" id="start-button">Start</button>
+    <header>
+      <h1>Snake</h1>
+    </header>
+    <div class="gameScreen">
+      <div id="map"></div>
+    </div>
 
+    <div class="gameOverScreen">
+      <div id="gameOver">
+          <img src="./images/snake.gif">
+        <h1 id= "flash">GAME OVER</h1>
+        <button type="button" id="try-button">Restart</button>
+      </div>
+    </div>
+    <footer>
+            <h1>Score</h1>
+            <div class="score"></div>
+    </footer>
   </body>
 </html>
