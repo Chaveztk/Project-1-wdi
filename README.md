@@ -2,7 +2,7 @@
 
 
 
-For the first assigned project at WDI we were given a week to create a game using HTML, CSS and JavaScript (JQuery used). For my project i decided to create snake (old Nokia mobile game from 90's).
+For the first assigned project at WDI we were given a week to create a game using HTML, CSS and JavaScript (jQuery used). For my project i decided to create snake (old Nokia mobile game from 90's).
 
 I tried to duplicate the game as much as possible without any start or pause buttons, the game however was styled to my imagination using CSS.
 
